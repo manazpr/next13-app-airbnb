@@ -18,11 +18,9 @@ jobs:
       - name: Checkout repo 
         uses: actions/checkout@v3
 
-      - name: Use Node ${{ matrix.node }}
-        uses: pnpm/action-setup@v2
-        with:
-          node-version: ${{ matrix.node }}
-          pnpm-version: latest
+      - name: Setup pnpm
+        uses: pnpm/action-setup@2.2.4
+       
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
