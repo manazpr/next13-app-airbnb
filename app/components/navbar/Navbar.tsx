@@ -1,5 +1,3 @@
-'use client';
-
 import { User } from '@prisma/client';
 import { SafeUser } from '@/app/types';
 import Container from '../Container';
