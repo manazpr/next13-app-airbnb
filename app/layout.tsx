@@ -9,7 +9,6 @@ import RentModal from '@/app/components/modals/RentModal';
 import ToasterProvider from '@/app/providers/ToasterProvider';
 
 import './globals.css'
-import ClientOnly from './components/ClientOnly';
 import getCurrentUser from './actions/getCurrentUser';
 
 export const metadata = {
@@ -31,14 +30,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ClientOnly>
+   
           <ToasterProvider />
           <LoginModal />
           <RegisterModal />
           <SearchModal />
           <RentModal />
           <Navbar currentUser={currentUser} />
-        </ClientOnly>
+       
         <div className="pb-20 pt-28">
           {children}
         </div>
