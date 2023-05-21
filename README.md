@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Airbnb</h1>
+    <h1>Airbnb Clone</h1>
     <strong>Tech stack: Next.js 13, React, Tailwind, Prisma, NextAuth, MongoDB</strong>
 </div>
 <br>
