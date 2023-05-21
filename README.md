@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+    <h1>Airbnb</h1>
+    <strong>Tech stack: Next.js 13, React, Tailwind, Prisma, NextAuth, MongoDB</strong>
+</div>
+<br>
+<div align="center">
+    <a href="https://vercel.com/manazpr/next13">
+        <img src="https://therealsujitk-vercel-badge.vercel.app/?app=next13-manazpr" alt="Vercel">
+    </a>
+    <a href="https://deepsource.io/gh/manazpr/next13-app-airbnb">
+        <img src="https://deepsource.io/gh/manazpr/next13-app-airbnb.svg/?label=active+issues&show_trend=true" alt="GitHub actions">
+    </a>
+     <a href="https://gitpod.io/#https://github.com/manazpr/next13-app-airbnb">
+        <img src="https://img.shields.io/badge/setup-automated-blue?logo=gitpod" alt="Gitpod">
+    </a>
+     <a href="https://twitter.com/manazpr">
+        <img src="https://img.shields.io/twitter/follow/manazpr?style=social" alt="Manaz PR Twitter">
+    </a>
+</div>
+<div align="center">
+    <br>
+    <a href="https://next13-manazpr.vercel.app/"><b>Visit »</b></a>
+    <br><br>
+    •
+    <a href="https://github.com/manazpr/next13-app-airbnb/issues/new"><b>Issues</b></a>
+</div>
 
 ## Getting Started
 
