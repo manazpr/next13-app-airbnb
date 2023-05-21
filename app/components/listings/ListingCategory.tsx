@@ -14,7 +14,7 @@ const ListingCategory: React.FC<ListingCategoryProps> = ({icon: Icon, label, des
                 <div className="text-lg font-semibold">
                     {label}
                 </div>
-                <div className="text-neutral-500 font-light">
+                <div className="font-light text-neutral-500">
                     {description}
                 </div>
             </div>
