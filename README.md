@@ -20,9 +20,8 @@
 <div align="center">
     <br>
     <a href="https://next13-manazpr.vercel.app/"><b>Visit »</b></a>
-    <br><br>
-    •
-    <a href="https://github.com/manazpr/next13-app-airbnb/issues/new"><b>Issues</b></a>
+    <br>
+   
 </div>
 
 ## Getting Started
