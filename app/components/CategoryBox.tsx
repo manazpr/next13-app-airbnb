@@ -14,7 +14,7 @@ interface CategoryBoxProps {
 const CategoryBox: React.FC<CategoryBoxProps> = ({
   icon: Icon,
   label,
-  selected,
+  selected
 }) => {
   const router = useRouter();
   const params = useSearchParams();
@@ -28,7 +28,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 
     const updatedQuery: any = {
       ...currentQuery,
-      category: label,
+      category: label
     };
 
     if (params?.get('category') === label) {
@@ -38,7 +38,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     const url = qs.stringifyUrl(
       {
         url: '/',
-        query: updatedQuery,
+        query: updatedQuery
       },
       { skipNull: true }
     );

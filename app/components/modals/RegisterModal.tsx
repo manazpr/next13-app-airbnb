@@ -22,13 +22,13 @@ const RegisterModal = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FieldValues>({
     defaultValues: {
       name: '',
       email: '',
-      password: '',
-    },
+      password: ''
+    }
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -36,7 +36,7 @@ const RegisterModal = () => {
     axios
       .post('api/register', data)
       .then(() => {
-        toast.success("Success")
+        toast.success('Success');
         registerModal.onClose();
         loginModal.onOpen();
       })

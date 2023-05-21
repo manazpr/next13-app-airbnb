@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
@@ -45,7 +44,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   );
   return {
     hasFavorited,
-    toggleFavorite,
+    toggleFavorite
   };
 };
 

@@ -12,7 +12,7 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
   label,
   icon: Icon,
   selected,
-  onClick,
+  onClick
 }) => {
   return (
     <div

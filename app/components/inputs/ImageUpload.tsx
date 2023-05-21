@@ -25,7 +25,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
       onUpload={handleUpload}
       uploadPreset="sefuvtoo"
       options={{
-        maxFiles: 1,
+        maxFiles: 1
       }}
     >
       {({ open }) => {

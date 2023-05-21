@@ -71,16 +71,27 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div className="absolute shadow-md rounded-xl w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
-
             {currentUser ? (
               <>
-                <div className='md:hidden'>
-                  <MenuItem onClick={() => router.push('/')} label="Home"/>
-                  </div>
-                <MenuItem onClick={() => router.push('/trips')} label="My Trips" />
-                <MenuItem onClick={() => router.push('/favorites')} label="My favorites" />
-                <MenuItem onClick={() => router.push('/reservations')} label="My reservations" />
-                <MenuItem onClick={() => router.push('/properties')} label="My properties" />
+                <div className="md:hidden">
+                  <MenuItem onClick={() => router.push('/')} label="Home" />
+                </div>
+                <MenuItem
+                  onClick={() => router.push('/trips')}
+                  label="My Trips"
+                />
+                <MenuItem
+                  onClick={() => router.push('/favorites')}
+                  label="My favorites"
+                />
+                <MenuItem
+                  onClick={() => router.push('/reservations')}
+                  label="My reservations"
+                />
+                <MenuItem
+                  onClick={() => router.push('/properties')}
+                  label="My properties"
+                />
                 <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
                 <hr />
                 <MenuItem onClick={() => signOut()} label="Logout" />

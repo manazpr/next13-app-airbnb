@@ -18,7 +18,7 @@ const ListingHead: React.FC<ListingHeadProps> = ({
   imageSrc,
   locationValue,
   id,
-  currentUser,
+  currentUser
 }) => {
   const { getByValue } = useCountries();
   const location = getByValue(locationValue);
@@ -29,17 +29,14 @@ const ListingHead: React.FC<ListingHeadProps> = ({
         subtitle={`${location?.region}, ${location?.label}`}
       />
       <div className="w-full overflow-hidden h-[60vh] rounded-xl relative z-[-10]">
-        <Image 
-        alt='Image'
-        src={imageSrc}
-        fill
-        className="object-cover w-full"
+        <Image
+          alt="Image"
+          src={imageSrc}
+          fill
+          className="object-cover w-full"
         />
-        <div className='absolute top-5 right-5'>
-        <HeartButton
-        listingId={id}
-        currentUser={currentUser}
-        />
+        <div className="absolute top-5 right-5">
+          <HeartButton listingId={id} currentUser={currentUser} />
         </div>
       </div>
     </>

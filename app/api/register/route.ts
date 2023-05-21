@@ -13,8 +13,8 @@ export async function POST(request: Request) {
     data: {
       email,
       name,
-      hashedPassword,
-    },
+      hashedPassword
+    }
   });
 
   return NextResponse.json(user);

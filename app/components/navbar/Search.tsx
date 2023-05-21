@@ -13,10 +13,10 @@ const Search = () => {
   const params = useSearchParams();
   const { getByValue } = useCountries();
 
-  const  locationValue = params?.get('locationValue'); 
-  const  startDate = params?.get('startDate');
-  const  endDate = params?.get('endDate');
-  const  guestCount = params?.get('guestCount');
+  const locationValue = params?.get('locationValue');
+  const startDate = params?.get('startDate');
+  const endDate = params?.get('endDate');
+  const guestCount = params?.get('guestCount');
 
   const locationLabel = useMemo(() => {
     if (locationValue) {
@@ -39,7 +39,7 @@ const Search = () => {
       return `${diff} Days`;
     }
 
-    return 'Any Week'
+    return 'Any Week';
   }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
@@ -50,7 +50,7 @@ const Search = () => {
     return 'Add Guests';
   }, [guestCount]);
 
-  return ( 
+  return (
     <div
       onClick={searchModal.onOpen}
       className="
@@ -65,15 +65,9 @@ const Search = () => {
         cursor-pointer
       "
     >
-      <div 
-        className="flex flex-row items-center justify-between "
-      >
-        <div 
-          className="px-6 text-sm font-semibold "
-        >
-          {locationLabel}
-        </div>
-        <div 
+      <div className="flex flex-row items-center justify-between ">
+        <div className="px-6 text-sm font-semibold ">{locationLabel}</div>
+        <div
           className="
             hidden 
             sm:block 
@@ -87,19 +81,15 @@ const Search = () => {
         >
           {durationLabel}
         </div>
-        <div 
-          className="flex flex-row items-center gap-3 pl-6 pr-2 text-sm text-gray-600 "
-        >
+        <div className="flex flex-row items-center gap-3 pl-6 pr-2 text-sm text-gray-600 ">
           <div className="hidden sm:block">{guestLabel}</div>
-          <div 
-            className="p-2 text-white rounded-full bg-rose-500"
-          >
+          <div className="p-2 text-white rounded-full bg-rose-500">
             <BiSearch size={18} />
           </div>
         </div>
       </div>
     </div>
   );
-}
- 
+};
+
 export default Search;

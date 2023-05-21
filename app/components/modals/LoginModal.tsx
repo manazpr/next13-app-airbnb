@@ -26,19 +26,19 @@ const LoginModal = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FieldValues>({
     defaultValues: {
       email: '',
-      password: '',
-    },
+      password: ''
+    }
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     signIn('credentials', {
       ...data,
-      redirect: false,
+      redirect: false
     }).then((callback) => {
       setIsLoading(false);
       if (callback?.ok) {

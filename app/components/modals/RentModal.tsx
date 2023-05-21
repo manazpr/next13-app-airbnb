@@ -22,7 +22,7 @@ enum STEPS {
   INFO = 2,
   IMAGES = 3,
   DESCRIPTION = 4,
-  PRICE = 5,
+  PRICE = 5
 }
 
 const RentModal = () => {
@@ -38,7 +38,7 @@ const RentModal = () => {
     setValue,
     watch,
     formState: { errors },
-    reset,
+    reset
   } = useForm<FieldValues>({
     defaultValues: {
       category: '',
@@ -49,8 +49,8 @@ const RentModal = () => {
       imageSrc: '',
       price: 1,
       title: '',
-      description: '',
-    },
+      description: ''
+    }
   });
 
   const category = watch('category');
@@ -63,7 +63,7 @@ const RentModal = () => {
   const Map = useMemo(
     () =>
       dynamic(() => import('../Map'), {
-        ssr: false,
+        ssr: false
       }),
     [location]
   );
@@ -72,7 +72,7 @@ const RentModal = () => {
     setValue(id, value, {
       shouldValidate: true,
       shouldDirty: true,
-      shouldTouch: true,
+      shouldTouch: true
     });
   };
 

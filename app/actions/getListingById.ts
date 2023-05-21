@@ -9,11 +9,11 @@ export default async function getListingById(params: IParams) {
     const { listingId } = params;
     const listing = await prisma.listing.findUnique({
       where: {
-        id: listingId,
+        id: listingId
       },
       include: {
-        user: true,
-      },
+        user: true
+      }
     });
     if (!listing) {
       return null;
@@ -26,8 +26,8 @@ export default async function getListingById(params: IParams) {
         ...listing.user,
         createdAt: listing.createdAt.toISOString(),
         updatedAt: listing.user.updatedAt.toISOString(),
-        emailVerified: listing.user.emailVerified?.toISOString() || null,
-      },
+        emailVerified: listing.user.emailVerified?.toISOString() || null
+      }
     };
   } catch (error: any) {
     throw new Error(error);

@@ -1,19 +1,15 @@
 'use client';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useCallback, useMemo } from "react";
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useCallback, useMemo } from 'react';
 import { format } from 'date-fns';
 
-import useCountries from "@/app/hooks/useCountries";
-import { 
-  SafeListing, 
-  SafeReservation, 
-  SafeUser 
-} from "@/app/types";
+import useCountries from '@/app/hooks/useCountries';
+import { SafeListing, SafeReservation, SafeUser } from '@/app/types';
 
-import HeartButton from "../HearButton";
-import Button from "../Button";
+import HeartButton from '../HearButton';
+import Button from '../Button';
 
 interface ListingCardProps {
   data: SafeListing;
@@ -22,8 +18,8 @@ interface ListingCardProps {
   disabled?: boolean;
   actionLabel?: string;
   actionId?: string;
-  currentUser?: SafeUser | null
-};
+  currentUser?: SafeUser | null;
+}
 
 const ListingCard: React.FC<ListingCardProps> = ({
   data,
@@ -32,7 +28,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   disabled,
   actionLabel,
   actionId = '',
-  currentUser,
+  currentUser
 }) => {
   const router = useRouter();
   const { getByValue } = useCountries();
@@ -41,14 +37,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
+      e.stopPropagation();
 
-    if (disabled) {
-      return;
-    }
+      if (disabled) {
+        return;
+      }
 
-    onAction?.(actionId)
-  }, [disabled, onAction, actionId]);
+      onAction?.(actionId);
+    },
+    [disabled, onAction, actionId]
+  );
 
   const price = useMemo(() => {
     if (reservation) {
@@ -62,7 +60,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
     if (!reservation) {
       return null;
     }
-  
+
     const start = new Date(reservation.startDate);
     const end = new Date(reservation.endDate);
 
@@ -70,14 +68,12 @@ const ListingCard: React.FC<ListingCardProps> = ({
   }, [reservation]);
 
   return (
-    <div 
-      onClick={() => router.push(`/listings/${data.id}`)} 
+    <div
+      onClick={() => router.push(`/listings/${data.id}`)}
       className="col-span-1 cursor-pointer group"
     >
       <div className="flex flex-col w-full gap-2">
-        <div 
-          className="relative w-full overflow-hidden aspect-square rounded-xl"
-        >
+        <div className="relative w-full overflow-hidden aspect-square rounded-xl">
           <Image
             fill
             className="object-cover w-full h-full transition group-hover:scale-110"
@@ -85,10 +81,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             alt="Listing"
           />
           <div className="absolute top-3 right-3">
-            <HeartButton 
-              listingId={data.id} 
-              currentUser={currentUser}
-            />
+            <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
         </div>
         <div className="text-lg font-semibold">
@@ -98,24 +91,20 @@ const ListingCard: React.FC<ListingCardProps> = ({
           {reservationDate || data.category}
         </div>
         <div className="flex flex-row items-center gap-1">
-          <div className="font-semibold">
-          ₹ {price}
-          </div>
-          {!reservation && (
-            <div className="font-light">night</div>
-          )}
+          <div className="font-semibold">₹ {price}</div>
+          {!reservation && <div className="font-light">night</div>}
         </div>
         {onAction && actionLabel && (
           <Button
             disabled={disabled}
             small
-            label={actionLabel} 
+            label={actionLabel}
             onClick={handleCancel}
           />
         )}
       </div>
     </div>
-   );
-}
- 
+  );
+};
+
 export default ListingCard;
